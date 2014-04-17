@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'AvantiBold';
+    src: url('avanti_bold_3.eot');
+    src: url('avanti_bold_3.eot') format('embedded-opentype'),
+         url('avanti_bold_3.woff') format('woff'),
+         url('avanti_bold_3.ttf') format('truetype'),
+         url('avanti_bold_3.svg#AvantiBold') format('svg');
+}
