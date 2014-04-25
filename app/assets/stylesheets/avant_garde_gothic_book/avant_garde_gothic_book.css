@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'AvantGardeGothicCBook';
-    src: url('avant_garde_gothic_book.eot');
-    src: url('avant_garde_gothic_book.eot') format('embedded-opentype'),
-         url('avant_garde_gothic_book.woff') format('woff'),
-         url('avant_garde_gothic_book.ttf') format('truetype'),
-         url('avant_garde_gothic_book.svg#AvantGardeGothicCBook') format('svg');
-}

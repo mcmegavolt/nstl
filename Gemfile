@@ -38,3 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'thin'
+gem 'russian'
+gem 'slim-rails'
+gem 'bootstrap-sass'
+gem 'inherited_resources'
+gem 'font-awesome-rails'
+gem 'jquery-easing-rails'
+# gem 'gon'

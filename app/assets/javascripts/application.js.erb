@@ -1,0 +1,194 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require jquery.easing
+//= require turbolinks
+//= require_tree .
+
+$(document).ready(function(){
+
+    // Hide scroll to top
+    $(".navbar-brand").hide();
+    
+    // Meter Variables
+    var count_goal = 100000;
+    var current = "<%= Petition.count + 64000 %>";
+    var meter_value = (current*100)/count_goal
+    // Meter Animate
+    $({someValue: 0}).animate({someValue: meter_value}, {
+      duration: 3000,
+      easing:'easeInOutExpo', // can be anything
+      step: function() { // called on every step
+        $('meter').attr("value", Math.round(this.someValue));
+      }
+    });
+    // Reload big counter
+    reload_counter(current);
+
+    var form = $("form");
+
+    // Validate form
+    form.validate({
+      rules: {
+        "petition[first_name]": {
+          required: true,
+        },
+        "petition[last_name]": {
+          required: true,
+        },
+        "petition[email]": {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        "petition[first_name]": "Введіть Ім\'я",
+        "petition[last_name]": "Введіть Прізвище",
+        "petition[email]": {
+            required: "Введіть email",
+            email: "Введіть корректний email"
+        }
+      }
+    });
+
+    form.submit(function() {  
+
+        if ($(this).valid()) {
+
+            var valuesToSubmit = $(this).serialize();
+            $.ajax({
+                url: $(this).attr('action'),
+                data: valuesToSubmit,
+                type: 'post',
+                dataType: 'text'
+            }).success(function(){
+                // If submit success
+                $.ajax({
+                    type: "GET",
+                    dataType: "text",
+                    url: "/petitions",
+                    success: function(data){
+                        // Scroll to top
+                        $('html, body').stop().animate({
+                            scrollTop: $('section.intro').offset().top
+                        }, 1500, 'easeInOutExpo', function() {
+                            // Clear the form
+                            $('form input').val('');
+                            // Update counter
+                            reload_counter(parseInt(data, 10));
+                        });
+                    }
+                });
+            });
+            return false;
+
+        }
+
+    });
+
+    
+});
+
+
+function reload_counter(count) {
+
+    var firstThreeDigits = 0;
+    var secondThreeDigits = 0;
+    // count = 100000;
+
+    if (count < 1000) {
+        firstThreeDigits = 0;
+        secondThreeDigits = count;
+    }
+    else if (count < 10000 ) {
+        firstThreeDigits = count.toString().substring(0,1);
+        secondThreeDigits = count.toString().substring(1,4);
+    }
+    else if (count < 100000 ) {
+        firstThreeDigits = count.toString().substring(0,2);
+        secondThreeDigits = count.toString().substring(2,5);
+    }
+    else {
+        firstThreeDigits = count.toString().substring(0,3);
+        secondThreeDigits = count.toString().substring(3,6);
+    }
+
+    // console.log(firstThreeDigits);
+    // console.log(secondThreeDigits);
+    
+    $({someValue: 0}).animate({someValue: firstThreeDigits}, {
+      duration: 3000,
+      easing:'easeInOutExpo',
+      step: function() { 
+        if (Math.round(this.someValue) < 10) {
+            $('#fisrt-three-digits').html('00' + Math.round(this.someValue));
+        }
+        else if (Math.round(this.someValue) < 100) {
+            $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
+        }
+        else {
+            $('#fisrt-three-digits').html(Math.round(this.someValue));   
+        }
+      }
+    });
+
+    $({someValue: 0}).animate({someValue: secondThreeDigits}, {
+      duration: 3000,
+      easing:'easeInOutExpo',
+      step: function() { 
+        if (Math.round(this.someValue) < 10) {
+            $('#second-three-digits').html('00' + Math.round(this.someValue));
+        }
+        else if (Math.round(this.someValue) < 100) {
+            $('#second-three-digits').html('0' + Math.round(this.someValue));
+        }
+        else {
+            $('#second-three-digits').html(Math.round(this.someValue));   
+        }
+      }
+    });
+
+
+
+};
+
+
+$(function(){
+    $.stellar({
+        horizontalScrolling: false,
+        verticalOffset: -40
+    });
+});
+
+//jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($(".navbar").offset().top > 85) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+        $(".navbar-brand").fadeIn('slow');
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".navbar-brand").fadeOut('fast');
+    }
+});
+
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('.page-scroll a').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});

@@ -1,0 +1,444 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+*/
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'AvantGardeGothicCBook', sans-serif;
+    // font-family: 'AvantiBold', sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+b, strong {
+    font-family: 'AvantiBold', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: 'AvantGardeGothicCBook', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+p {
+    // margin: 0 0 25px;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+@media(min-width:767px) {
+    p {
+        // margin: 0 0 35px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+.navbar {
+    margin-bottom: 0;
+    // border-bottom: 1px solid rgba(255,255,255,.3);
+    text-transform: uppercase;
+    font-family: 'AvantGardeGothicCBook', sans-serif;
+    // background-color: #000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.navbar-brand:focus {
+    outline: 0;
+}
+
+.navbar-custom a {
+    color: #fff;
+}
+
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li.active {
+    outline: 0;
+    background-color: rgba(255,255,255,.2);
+}
+
+.navbar-toggle {
+    padding: 4px 6px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.navbar-toggle:focus,
+.navbar-toggle:active {
+    outline: 0;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: 0 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+
+    .top-nav-collapse {
+        padding: 0;
+        background-color: #fff;
+        a {
+            color: #000;
+        }
+    }
+
+    .navbar-custom.top-nav-collapse {
+        // border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+}
+
+.intro {
+
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: image-url('bg-1.jpg');
+
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    // padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+    .social {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        a:link {
+            margin-left: 8px;
+        }
+    }
+}
+
+.intro-body {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 50px;
+}
+
+.brand-heading img {
+    width: 450px;
+}
+
+.btn-white {
+
+    color: #EF6225;
+    background-color: #fff;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    -webkit-border-radius: 21px;
+    border-radius: 22px;
+    font-size: 16px;
+
+}
+
+.contact-icons a {
+    margin-right: 10px;
+}
+
+#thanks {
+    font-size: 12px;
+    img {
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+}
+
+.arrow {
+    background-image: image-url('arrow.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 44px;
+}
+
+.arrow-inverted {
+    background-image: image-url('arrow-inverted.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 44px;
+}
+
+
+@media(min-width:767px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .brand-heading {
+        font-size: 100px;
+    }
+
+    .intro-text {
+        font-size: 25px;
+    }
+}
+
+
+.meter-holder {
+    
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    
+    meter {
+      width: 100%;
+      height: 12px;
+      // border: 0px none;
+      // border-radius: 5px;
+    }
+
+    meter::-webkit-meter-bar {
+      border-radius: 6px;
+      background: #FFF;
+    }
+    meter::-webkit-meter-optimum-value {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      background: linear-gradient(to bottom, #E2B71B, #E2B71B);
+    }
+    meter::-webkit-meter-suboptimum-value {
+        background: linear-gradient(to bottom, #fbb450, #f89406);
+    }
+    meter::-webkit-meter-even-less-good-value {
+        background: linear-gradient(to bottom, #ee5f5b, #bd362f);
+    }
+    
+}
+
+
+#counter {
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+    position: relative;
+    margin: 20px 0 30px 0;
+    color: #656263;
+    font-family: 'AvantiBold', sans-serif;
+    font-size: 95px;
+    #left-block, #right-block, #fisrt-three-digits, #second-three-digits {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+        text-align: center;
+        background-color: #fff;
+    }
+    #left-block, #right-block {
+        width: 15.166666667%;
+    }
+    #fisrt-three-digits, #second-three-digits {
+        width: 33.3333333333%;
+    }
+    #second-three-digits {
+        margin-left: 1%;
+    }
+    #left-block {
+        margin-right: 1%;
+        -webkit-border-radius: 70px 0 0 70px;
+        border-radius: 70px 0 0 70px;
+    }
+    #right-block {
+        margin-left: 1%;
+        -webkit-border-radius: 0 70px 70px 0;
+        border-radius: 0 70px 70px 0;
+    }
+}
+
+
+.content-section {
+    padding-top: 100px;
+}
+
+#slider, #contacts {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#petition {
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background: image-url('bg-2.jpg');
+    width: 100%;
+    color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    .petition-body {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+form {
+    margin-top: 30px;
+    input.form-control {
+        margin-top: 20px;
+        padding: 24px 25px;
+        color: #EF6225;
+        background-color: #fff;
+        -webkit-border-radius: 24px;
+        border-radius: 24px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+    }
+    button {
+        margin-top: 20px;
+    }
+    label {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+}
+
+.text-block {
+    margin-top: 50px;
+}
+
+.rounded-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    -webkit-border-radius: 34px;
+    border-radius: 34px;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+#contacts {
+    background-image: image-url('bottom-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 200px;
+}
+
+@media(min-width:767px) {
+    .content-section {
+        padding-top: 250px;
+    }
+
+    .download-section {
+        padding: 100px 0;
+    }
+
+    #map {
+        height: 400px;
+        margin-top: 250px;
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: 'AvantGardeGothicCBook', sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.banner-social-buttons {
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    ul.banner-social-buttons>li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons>li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+

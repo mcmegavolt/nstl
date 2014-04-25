@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Nestle
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = favicon_link_tag 'favicon.ico', type: 'image/x-icon'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body#page-top data-spy='scroll' data-target='.navbar-custom'
+    = yield
