@@ -46,3 +46,8 @@ gem 'inherited_resources'
 gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
 # gem 'gon'
+
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
