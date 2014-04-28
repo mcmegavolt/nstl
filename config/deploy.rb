@@ -5,11 +5,11 @@ set :application, 'nestle'
 set :copy_exclude, [".git"]
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.1'
-
+set :deploy_via, :copy
 
 # set :repo_url, 'file://~/Ubuntu\ One/rails_projects/nestle/.'
 set :repository, "file://~/Ubuntu\ One/rails_projects/nestle"
-# set :local_repository, "file://~/Ubuntu\ One/rails_projects/nestle"
+set :local_repository, "31.41.217.13:path/to/repo.git"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -26,7 +26,7 @@ set :deploy_to, '/var/www/evestudio/data/www/nestle'
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
@@ -45,7 +45,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
+      # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
