@@ -11,6 +11,7 @@
 
 /config/deploy
 /config/database.yml
+/config/secrets.yml
 /config/deploy.rb
 
 /public/uploads
