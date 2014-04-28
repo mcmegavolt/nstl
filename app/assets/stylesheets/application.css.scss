@@ -16,6 +16,25 @@
  *= require_self
 */
 
+@font-face {
+  font-family: 'AvantGardeGothicCBook';
+  src: font-url('avant_garde_gothic_book/avant_garde_gothic_book.eot');
+  src: font-url('avant_garde_gothic_book/avant_garde_gothic_book.eot') format('embedded-opentype'),
+       font-url('avant_garde_gothic_book/avant_garde_gothic_book.woff') format('woff'),
+       font-url('avant_garde_gothic_book/avant_garde_gothic_book.ttf') format('truetype'),
+       font-url('avant_garde_gothic_book/avant_garde_gothic_book.svg#AvantGardeGothicCBook') format('svg');
+}
+
+@font-face {
+    font-family: 'AvantiBold';
+    src: font-url('avanti_bold/avanti_bold_3.eot');
+    src: font-url('avanti_bold/avanti_bold_3.eot') format('embedded-opentype'),
+         font-url('avanti_bold/avanti_bold_3.woff') format('woff'),
+         font-url('avanti_bold/avanti_bold_3.ttf') format('truetype'),
+         font-url('avanti_bold/avanti_bold_3.svg#AvantiBold') format('svg');
+}
+
+
 body {
     width: 100%;
     height: 100%;
