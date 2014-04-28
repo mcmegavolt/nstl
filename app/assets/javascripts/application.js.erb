@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.easing
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
 
@@ -74,6 +75,7 @@ $(document).ready(function(){
                 dataType: 'text'
             }).success(function(){
                 // If submit success
+                $('#myModal').modal('show')
                 $.ajax({
                     type: "GET",
                     dataType: "text",
@@ -97,6 +99,7 @@ $(document).ready(function(){
 
     });
 
+    // $('#myModal').modal();
     
 });
 

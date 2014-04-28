@@ -20,18 +20,20 @@ section.intro data-stellar-background-ratio="0.5"
           h1.brand-heading
             = image_tag 'logo.png'
           .row
-            .col-xs-6.text-right
+            .col-xs-6.text-right.left-block
+              h2 Звернення
               p
-                'ШАНОВНА КОМПАНІЯ NESTLE! 
+                'УЛЮБЛЕНЕ NESTLE!
                 br
-                'Ми дуже любимо Вашу продукцію та ціюємо те, що Ви вдосконалюєте якість та оновлюєте асортимент Вашої продукції. Але разом з цим ми громадяни України  турбуємося також і про майбутнє нашої держави. Ми хочемо аби виробництво кондитерських та кавових виробів було перенесено в Україну!
-            .col-xs-6.text-left
+                'Ми всі насолоджуємося батончиками Nuts, KitKat, ароматом Nescafe, а наші діти смачним Nesquik. Ми любимо Вашу продукцію і цінуємо те, як Ви дбаєте про своїх споживачів, поліпшуючи якість і асортимент. А ще ми любимо нашу країну. Ми хочемо бачити її сильною і процвітаючою. Nestle, давайте разом розвивати Україну! Ми вибрали продукцію, яка виробляється "Nestle Росія", але може вироблятися на існуючих фабриках Nestle в Україні. Ми просимо Вас перенести виробництво цієї продукції в Україну!
+            .col-xs-6.text-left.right-block
+              h2 Обращение
               p
-                'УВАЖАЕМАЯ КОМПАНИЯ NESTLE!
+                'ЛЮБИМОЕ NESTLE!
                 br
-                'Мы очень любим Вашу продукцию. Мы ценим то, что Вы повышаете качество Вашей продукции,обновляете ее ассортимент. Одновременно мы, граждане Украины беспокоимся о будущем нашей страны! Мы хотим, чтобы производство кондитерских изделий и кофе было перенесено в Украину!
+                'Мы все наслаждаемся батончиками  Nuts, KitKat, ароматом  Nescafe, а наши дети вкусным Nesquik. Мы любим Вашу продукцию и ценим то, как Вы заботитесь о своих потребителях, улучшая качество и ассортимент. А еще мы любим нашу страну. Мы хотим видеть ее сильной и процветающей. Nestle, давайте вместе развивать Украину! Мы выбрали продукцию, которая производится "Nestle Россия", но может производиться на существующих фабриках  Nestle в  Украине. Мы просим  Вас перенести производство этой продукции в Украину!
           .row
-            .col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
+            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
               .meter-holder
                 meter value="80" max="100"
                 .pull-left
@@ -70,15 +72,22 @@ section#slider.text-center data-stellar-background-ratio="0.5"
     .container
       .row
         .col-lg-8.col-lg-offset-2
-          / h2 About Grayscale
-          / p Grayscale is a premium quality, free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, all you need to do is download the template on the preview page. You can use this template for any purpose, personal or commercial.
-          / p
-          /   'This striking, black and white theme features stock photographs by
-          /   a href="http://gratisography.com/"
-          /   'Gratisography
-          / p With this template, just the slightest splash of color can make a huge impact on the overall presentation and design.
-          / h2 About Grayscale
-          / p Grayscale is a premium quality, free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, all you need to do is download the template on the preview page. You can use this template for any purpose, personal or commercial.
+          #myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" 
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close aria-hidden="true" data-dismiss="modal" type="button"
+                    i.fa.fa-times-circle
+                  / h4#myModalLabel.modal-title Modal title
+                .modal-body
+                  h3.ukr
+                    'Ваша підписка прийнята!
+                    br
+                    'Дякуємо за терпіння та підтримку!
+                  h3.rus
+                    'Ваша подписка принята!
+                    br
+                    'Спасибо за терпение и поддержку!
 
 section#petition.text-center data-stellar-background-ratio="0.5"
   .arrow
@@ -109,13 +118,17 @@ section#petition.text-center data-stellar-background-ratio="0.5"
                   b Отправить
 
       .row.text-block
-        .col-xs-6.text-right
+        .col-xs-6.text-right.left-block
           p
             'Якщо ви знайшли товар, якого немає в опублікованих товарів компанії Nestle - надсилайте нам. Ми обов'язково опублікуємо!
-        .col-xs-6.text-left
+        .col-xs-6.text-left.right-block
           p
             b
               'Если Вы нашли товар, которого нет в опубликованных товарах компании Nestle - присылайте нам. Мы обязательно опубликуем.
+      .row.text-center
+        .col-lg-12
+            a href="#" data-target="#myModal" data-toggle="modal" style="color:#fff;"
+              i.fa.fa-play-circle-o
   .arrow-inverted
     '&nbsp;
 section#contacts.text-center
@@ -124,7 +137,7 @@ section#contacts.text-center
       .row
         .col-lg-10.col-lg-offset-1
           .row.text-block
-            .col-xs-6.text-right
+            .col-xs-6.text-right.left-block
               p
                 'Ми не комерційний фонд!
                 br
@@ -133,7 +146,7 @@ section#contacts.text-center
                 'Ми просто згуртована команда молодих та ініціативних людей, що мають свою громадянську позицію та турбуються про майбутнє нашої Країни.
                 br
                 'Так, ми робимо дизайни та програмуємо сайти за гроші, але тільки не тоді, коли це стосується нашого спільного майбутнього!
-            .col-xs-6.text-left
+            .col-xs-6.text-left.right-block.black-line
               p
                 b
                   'Мы не коммерческий фонд!
