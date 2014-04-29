@@ -99,8 +99,32 @@ $(document).ready(function(){
 
     });
 
-    // $('#myModal').modal();
-    
+
+    $('.frame').mightySlider({
+        speed: 500,
+        autoScale: 0,
+        autoResize: 1,
+        easing: 'easeOutExpo',
+        parallaxDimensions: {x:1, y:1, z:1},
+        
+        // Navigation options
+        navigation: {
+            slideSize: '100%',
+            keyboardNavBy: 'slides'
+        },
+
+        buttons: {
+            prev: '#prev',
+            next: '#next'
+        },
+
+        // Commands
+        commands: {
+            buttons: 0,
+            pages: 0
+        }
+    });
+
 });
 
 

@@ -67,27 +67,36 @@ section.intro data-stellar-background-ratio="0.5"
               = image_tag 'icons/icon-circle-vk.png'
     .arrow-inverted
       '&nbsp;
+
 section#slider.text-center data-stellar-background-ratio="0.5"
   .slider-body
     .container
       .row
-        .col-lg-8.col-lg-offset-2
-          #myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" 
-            .modal-dialog
-              .modal-content
-                .modal-header
-                  button.close aria-hidden="true" data-dismiss="modal" type="button"
-                    i.fa.fa-times-circle
-                  / h4#myModalLabel.modal-title Modal title
-                .modal-body
-                  h3.ukr
-                    'Ваша підписка прийнята!
-                    br
-                    'Дякуємо за терпіння та підтримку!
-                  h3.rus
-                    'Ваша подписка принята!
-                    br
-                    'Спасибо за терпение и поддержку!
+        .col-xs-1
+          a id="prev"
+            i.fa.fa-chevron-circle-left
+        .col-xs-10
+          = render 'slider' 
+        .col-xs-1
+          a id="next"
+            i.fa.fa-chevron-circle-right
+
+    #myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" 
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close aria-hidden="true" data-dismiss="modal" type="button"
+              i.fa.fa-times-circle
+            / h4#myModalLabel.modal-title Modal title
+          .modal-body
+            h3.ukr
+              'Ваша підписка прийнята!
+              br
+              'Дякуємо за терпіння та підтримку!
+            h3.rus
+              'Ваша подписка принята!
+              br
+              'Спасибо за терпение и поддержку!
 
 section#petition.text-center data-stellar-background-ratio="0.5"
   .arrow
