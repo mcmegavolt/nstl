@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
   end
 
-
   resources :petitions
 
   root 'home#index'

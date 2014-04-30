@@ -85,173 +85,17 @@
 		#example .mSCaption {
 			display: none;
 			position: absolute;
-			color: #FFF;
-			line-height: normal;
-		}
-		#example .titleCaption {
-			top: 0;
-			left: 0;
-			width: 100% !important;
-			font-size: 36px;
-			text-align: center;
-			text-transform: uppercase;
-			white-space: nowrap;
-			opacity: 0;
-			filter: alpha(opacity=0);
 		}
 		#example .block {
-			width: 200px;
-			height: 74px;
-			padding: 25px;
-			background: #000;
-			text-align: center;
-			text-transform: uppercase;
-			font-size: 18px;
 			opacity: 0;
 			filter: alpha(opacity=0);
 		}
-		#example .whiteBlock {
-			background: #FFF;
-			color: #000;
-
-			-webkit-perspective: 1000px;
-				-ms-perspective: 1000px;
-					perspective: 1000px;
-
-			-webkit-perspective-origin: 50% 50%;
-				-ms-perspective-origin: 50% 50%;
-					perspective-origin: 50% 50%;
-		}
-		#example .noOpacity {
-			opacity: 1;
-			filter: alpha(opacity=100);
-		}
-		#example .textShadow {
-			text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-		}
-		#example .blurBackground {
+			
+		#example .block.fromLeft {
 			top: 0;
-			left: 0;
-			width: 100% !important;
-			height: 100% !important;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
-		#example .blurBackground img {
-			width: 100%;
-			height: 100%;
-		}
-		#example .quoteCaption {
-			top: 240px;
-			left: 15% !important;
-			width: 70% !important;
-			font-size: 22px;
-			font-weight: 300;
-			line-height: 100%;
-			text-align: left;
-			text-transform: uppercase;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
-		#example .quoterCaption {
-			top: 290px;
-			left: 915px;
-			font-size: 22px;
-			font-weight: 600;
-			text-align: left;
-			white-space: nowrap;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
-		#example .mightySlider {
-			top: 176px;
-			left: 449px;
-			font-size: 42px;
-			font-weight: 600;
-			text-align: left;
-			white-space: nowrap;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
-		#example .mightySlider strong {
-			font-weight: 300;
-		}
-		#example .mightySlider img {
-			max-width: 60%;
-			display: block;
-			margin: 0 auto;
+			right: 1000px;
 		}
 		
-		/* Blocks default styles */
-		#example .block.simpleFade {
-			top: 160px;
-			left: 125px;
-		}
-		#example .block.fromTop {
-			top: 120px;
-			left: 365px;
-		}
-		#example .block.fromBottom {
-			top: 200px;
-			left: 605px;
-		}
-		#example .block.fromLeft {
-			top: 160px;
-			left: 745px;
-		}
-		#example .block.fromRight {
-			top: 274px;
-			left: 345px;
-		}
-		#example .block.fromNE {
-			top: 234px;
-			left: 445px;
-		}
-		#example .block.fromSW {
-			top: 314px;
-			left: 765px;
-		}
-		#example .block.scaleDown {
-			top: 160px;
-			left: 125px;
-		}
 		#example .block.scaleUp {
-			top: 160px;
-			left: 365px;
-		}
-		#example .block.rotate {
-			top: 160px;
-			left: 605px;
-		}
-		#example .block.skew {
-			top: 160px;
-			left: 845px;
-		}
-		#example .block.rotateDown {
-			top: 274px;
-			left: 245px;
-		}
-		#example .block.rotateUp {
-			top: 274px;
-			left: 475px;
-		}
-		#example .block.turnOn {
-			top: 274px;
-			left: 725px;
-		}
-		#example .block.easing {
-			top: 100px;
-			left: -200px;
-		}
-		#example .block.delay {
-			top: 200px;
-			left: -200px;
-		}
-		#example .block.speed {
-			top: 300px;
-			left: -200px;
-		}
-		#example .block.repeatable {
-			top: 400px;
-			left: -200px;
+			top: 0;
 		}

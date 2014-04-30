@@ -1,16 +1,17 @@
 nav.navbar.navbar-custom.navbar-fixed-top.hidden-xs role="navigation" 
   .container
+    .page-scroll
+      a.navbar-brand href="#page-top"
+        i.fa.fa-arrow-up
     .collapse.navbar-collapse.navbar-right.navbar-main-collapse
       ul.nav.navbar-nav
         li.page-scroll
-          a href="#slider"  Продукти
+          a href="#slider"  Продукція
         li.page-scroll
           a href="#petition"  Підписатися
         li.page-scroll
-          a href="#contacts"  Контакти
-        li.page-scroll
-          a.navbar-brand href="#page-top"
-            i.fa.fa-arrow-up
+          a href="#contacts"
+            'в'язок з нами
     
 section.intro data-stellar-background-ratio="0.5"
   .intro-body
@@ -22,16 +23,16 @@ section.intro data-stellar-background-ratio="0.5"
           .row
             .col-xs-6.text-right.left-block
               h2 Звернення
-              p
+              p.dear
                 'УЛЮБЛЕНЕ NESTLE!
-                br
-                'Ми всі насолоджуємося батончиками Nuts, KitKat, ароматом Nescafe, а наші діти смачним Nesquik. Ми любимо Вашу продукцію і цінуємо те, як Ви дбаєте про своїх споживачів, поліпшуючи якість і асортимент. А ще ми любимо нашу країну. Ми хочемо бачити її сильною і процвітаючою. Nestle, давайте разом розвивати Україну! Ми вибрали продукцію, яка виробляється "Nestle Росія", але може вироблятися на існуючих фабриках Nestle в Україні. Ми просимо Вас перенести виробництво цієї продукції в Україну!
+              p.entry
+                'Ми всі насолоджуємося батончиками Nuts, KitKat, ароматом Nescafe, а наші діти смачним Nesquik. Ми любимо Вашу продукцію і цінуємо те, як Ви дбаєте про своїх споживачів, поліпшуючи якість і асортимент. А ще ми любимо нашу країну. Ми хочемо бачити її сильною і процвітаючою. Nestle, давайте разом розвивати Україну! Ми вибрали продукцію, яка виробляється &laquo;Nestle Росія&raquo;, але може вироблятися на існуючих фабриках Nestle в Україні. Ми просимо Вас перенести виробництво цієї продукції в Україну!
             .col-xs-6.text-left.right-block
               h2 Обращение
-              p
+              p.dear
                 'ЛЮБИМОЕ NESTLE!
-                br
-                'Мы все наслаждаемся батончиками  Nuts, KitKat, ароматом  Nescafe, а наши дети вкусным Nesquik. Мы любим Вашу продукцию и ценим то, как Вы заботитесь о своих потребителях, улучшая качество и ассортимент. А еще мы любим нашу страну. Мы хотим видеть ее сильной и процветающей. Nestle, давайте вместе развивать Украину! Мы выбрали продукцию, которая производится "Nestle Россия", но может производиться на существующих фабриках  Nestle в  Украине. Мы просим  Вас перенести производство этой продукции в Украину!
+              p.entry
+                'Мы все наслаждаемся батончиками  Nuts, KitKat, ароматом  Nescafe, а наши дети вкусным Nesquik. Мы любим Вашу продукцию и ценим то, как Вы заботитесь о своих потребителях, улучшая качество и ассортимент. А еще мы любим нашу страну. Мы хотим видеть ее сильной и процветающей. Nestle, давайте вместе развивать Украину! Мы выбрали продукцию, которая производится &laquo;Nestle Россия&raquo;, но может производиться на существующих фабриках  Nestle в  Украине. Мы просим  Вас перенести производство этой продукции в Украину!
           .row
             .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
               .meter-holder
@@ -134,10 +135,10 @@ section#petition.text-center data-stellar-background-ratio="0.5"
           p
             b
               'Если Вы нашли товар, которого нет в опубликованных товарах компании Nestle - присылайте нам. Мы обязательно опубликуем.
-      .row.text-center
-        .col-lg-12
-            a href="#" data-target="#myModal" data-toggle="modal" style="color:#fff;"
-              i.fa.fa-play-circle-o
+      / .row.text-center
+      /   .col-lg-12
+      /       a href="#" data-target="#myModal" data-toggle="modal" style="color:#fff;"
+      /         i.fa.fa-play-circle-o
   .arrow-inverted
     '&nbsp;
 section#contacts.text-center
@@ -162,9 +163,9 @@ section#contacts.text-center
                   br
                   'Мы не общественная организация!
                   br
-                  'Мы просто группа молодых, инициативных людей, которые имеют свою гражданскую позицию и беспокоятся о будущем нашей Страны.
+                  'Мы просто группа молодых, инициативных людей, которые имеют свою гражданскую позицию и беспокоятся за будущее нашей Родины.
                   br
-                  'Да, мы делаем дизайн и сайты за деньги, но не тогда, когда это касается нашего общего будущего!
+                  'Да, мы делаем дизайны и сайты за деньги, но только не тогда, когда это касается нашего общего будущего!
       .row.text-block
         .col-xs-6.text-right#thanks
           = image_tag 'icons/icon-uk-flag.png'
