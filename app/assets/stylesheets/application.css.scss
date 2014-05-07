@@ -344,6 +344,9 @@ p {
             margin-top: 20px;
         }
         img {
+            &.product {
+                width: 100%;
+            }
             &.barcode {
                 position: absolute;
                 right: 10px;
