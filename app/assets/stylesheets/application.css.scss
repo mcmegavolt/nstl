@@ -1,20 +1,28 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require bootstrap
  *= require font-awesome
  *= require_tree .
  *= require_self
 */
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+$screen-xs-min: 480px;
+$screen-xs-max: 767px;
+
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+
+$screen-lg-min: 1200px;
+
+@media (min-width: $screen-sm-min) { }
+@media (min-width: $screen-md-min) { }
+@media (min-width: $screen-lg-min) { }
 
 @font-face {
   font-family: 'AvantGardeGothicCBook';
@@ -81,13 +89,13 @@ p {
     color: $text-red;
 }
 
-@media(min-width:767px) {
-    p {
-        // margin: 0 0 35px;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-}
+// @media(min-width:$screen-xs-max) {
+//     p {
+//         // margin: 0 0 35px;
+//         font-size: 14px;
+//         line-height: 1.6;
+//     }
+// }
 
 
 .navbar-nav > li > a {
@@ -115,7 +123,7 @@ p {
 }
 
 .navbar-custom a {
-    color: #fff;
+    color: rgb(230,230,230);
 }
 
 .navbar-custom .nav li a {
@@ -142,7 +150,7 @@ p {
     outline: 0;
 }
 
-@media(min-width:767px) {
+@media(min-width:$screen-xs-max) {
     .navbar {
         padding: 20px 0;
         border-bottom: 0;
@@ -266,34 +274,22 @@ p {
 
     }
     p {
-        font-size: 15px;
-        line-height: 20px;
-    }
-    .right-block {
-        h2 {
-            // font-family: 'AvantiBold', sans-serif;    
-            // font-size: 60px;
-            font-size: 55px;
-            font-weight: normal;
-            margin-bottom: 5px;
-            line-height: 60px;
-        }
-        p {
-            // font-family: 'AvantiBold', sans-serif;
-            &.entry {
-            }
+        font-size: 13px;
+        line-height: 16px;
+        @media(min-width:$screen-sm-min) {
+            line-height: 20px;
+            font-size: 15px;
         }
     }
-    .left-block {
-        h2 {
-            font-family: 'AvantGardeGothicCBook', sans-serif;
-            font-weight: normal;
-            font-size: 55px;
-            margin-bottom: 5px;
+    h2 {
+        font-weight: normal;
+        font-size: 30px;
+        margin-bottom: 5px;
+        @media(min-width:$screen-sm-min) {
+            font-size: 50px;
         }
-        p {
-            &.entry {
-            }
+        @media(min-width:$screen-md-min) {
+            font-size: 55px;
         }
     }
 }
@@ -301,14 +297,20 @@ p {
 .intro-body {
     display: table-cell;
     vertical-align: middle;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .brand-heading {
     margin-bottom: 10px;
     img {
-        width: 500px;
         margin: 0 0 10px;
+        width: 350px;
+        @media(min-width:$screen-sm-min) {
+            width: 400px;
+        }
+        @media(min-width:$screen-md-min) {
+            width: 500px;
+        }
     }
 }
 
@@ -331,7 +333,13 @@ p {
 .slider-body {
     .slide-title {
         text-transform: uppercase;
-        font-size: 30px;
+        font-size: 20px;
+        @media(min-width:$screen-sm-min) {
+        font-size: 25px;
+        }
+        @media(min-width:$screen-md-min) {
+            font-size: 30px;
+        }
         margin-bottom: 30px;
     }
     .slide-sub-title {
@@ -340,6 +348,12 @@ p {
         margin-bottom: 20px;
     }
     .slide-content {
+        p {
+            font-size: 13px;
+            @media(min-width:$screen-sm-min) {
+            font-size: 14px;
+            }
+        }
         p:first-child {
             margin-top: 20px;
         }
@@ -351,6 +365,13 @@ p {
                 position: absolute;
                 right: 10px;
                 bottom: 10px;
+                width: 100px;
+                @media(min-width:$screen-sm-min) {
+                   width: 150px;
+                }
+                @media(min-width:$screen-md-min) {
+                   width: 200px;
+                }
             }
         }
     }
@@ -358,7 +379,13 @@ p {
         padding-top: 200px;
         #prev, #next {
             color: $text-red;
-            font-size: 50px;
+            font-size: 30px;
+            @media(min-width:$screen-sm-min) {
+               font-size: 40px;
+            }
+            @media(min-width:$screen-md-min) {
+               font-size: 50px;
+            }
             -webkit-transition: all 300ms ease-in-out;
             -moz-transition: all 300ms ease-in-out;
             -ms-transition: all 300ms ease-in-out;
@@ -398,7 +425,7 @@ p {
 }
 
 
-@media(min-width:767px) {
+@media(min-width:$screen-xs-max) {
     .intro {
         // height: 100%;
         padding: 0;
@@ -461,7 +488,13 @@ p {
     margin: 20px 0 30px 0;
     color: #656263;
     font-family: 'AvantiBold', sans-serif;
-    font-size: 95px;
+    font-size: 65px;
+    @media(min-width:$screen-sm-min) {
+        font-size: 90px;
+    }
+    @media(min-width:$screen-md-min) {
+        font-size: 95px;
+    }
     #left-block, #right-block, #fisrt-three-digits, #second-three-digits {
         position: relative;
         min-height: 1px;
@@ -562,7 +595,7 @@ form {
     padding-bottom: 200px;
 }
 
-@media(min-width:767px) {
+@media(min-width:$screen-xs-max) {
     .content-section {
         padding-top: 250px;
     }
@@ -590,13 +623,13 @@ form {
     margin-top: 0;
 }
 
-@media(max-width:1199px) {
+@media(max-width:$screen-md-max) {
     ul.banner-social-buttons {
         margin-top: 15px;
     }
 }
 
-@media(max-width:767px) {
+@media(max-width:$screen-xs-max) {
     ul.banner-social-buttons>li {
         display: block;
         margin-bottom: 20px;
@@ -632,44 +665,51 @@ body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
 
-ul.top-menu {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-    float: right;
-    vertical-align: top;
-    li {
-        display: inline-flex;
-        &:first-child a {
-            background: #fff;
-            color: #006F28;
+.top-menu {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        @media(min-width:$screen-sm-min) {
         }
-        a {
-            text-align: center;
-            padding: 3px 10px;
-            line-height: 12px;
-            color: #fff;
-            font-size: 12px;
-            display: inline-block;
-            -webkit-border-radius: 15px;
-            border-radius: 15px;
-            -webkit-transition: all 200ms ease-in-out;
-            -moz-transition: all 200ms ease-in-out;
-            -ms-transition: all 200ms ease-in-out;
-            -o-transition: all 200ms ease-in-out;
-            transition: all 200ms ease-in-out;
-            &:hover {
-                text-decoration: none;
-                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-                filter: alpha(opacity=80);
-                -moz-opacity: 0.8;
-                -khtml-opacity: 0.8;
-                opacity: 0.8;
+        @media(min-width:$screen-md-min) {
+            float: right;
+        }
+        vertical-align: top;
+        li {
+            display: inline-flex;
+            &:first-child a {
+                background: #fff;
+                color: #006F28;
+            }
+            a {
+                text-align: center;
+                padding: 3px 10px;
+                line-height: 12px;
+                color: #fff;
+                font-size: 12px;
+                display: inline-block;
+                -webkit-border-radius: 15px;
+                border-radius: 15px;
+                -webkit-transition: all 200ms ease-in-out;
+                -moz-transition: all 200ms ease-in-out;
+                -ms-transition: all 200ms ease-in-out;
+                -o-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
+                &:hover {
+                    text-decoration: none;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+                    filter: alpha(opacity=80);
+                    -moz-opacity: 0.8;
+                    -khtml-opacity: 0.8;
+                    opacity: 0.8;
+                }
             }
         }
     }
 }
+
 
 .modal-dialog {
     position: fixed;
@@ -680,4 +720,20 @@ ul.top-menu {
     margin-top: -200px;
     height: 366px;
     margin-left: -300px;
+}
+
+#helper {
+  position: fixed;
+  left: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: gainsboro;
+  z-index: 999999;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
 }
