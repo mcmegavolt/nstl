@@ -1,0 +1,69 @@
+section.intro data-stellar-background-ratio="0.5"
+  .intro-body
+    .container
+      .row
+        .col-xs-12.text-right
+          ul.top-menu
+            li.page-scroll
+              a href="#donate"
+                'допомога проекту
+                br
+                'помощь проекту
+            li.page-scroll
+              a href="#contacts"
+                = image_tag 'icons/icon-envelope.png'
+                br
+                br
+                'зв'язок з нами
+                br
+                'связь с нами
+      .row
+        .col-md-10.col-md-offset-1
+          h1.brand-heading
+            = image_tag 'logo.png'
+          .row
+            .col-xs-6.text-right.left-block
+              h2 Звернення
+              p.dear
+                'УЛЮБЛЕНЕ NESTLE!
+              p.entry
+                'Ми всі насолоджуємося батончиками Nuts, KitKat, ароматом Nescafe, а наші діти смачним Nesquik. Ми любимо Вашу продукцію і цінуємо те, як Ви дбаєте про своїх споживачів, поліпшуючи якість і асортимент. А ще ми любимо нашу країну. Ми хочемо бачити її сильною і процвітаючою. Nestle, давайте разом розвивати Україну! Ми вибрали продукцію, яка виробляється &laquo;Nestle Росія&raquo;, але може вироблятися на існуючих фабриках Nestle в Україні. Ми просимо Вас перенести виробництво цієї продукції в Україну!
+            .col-xs-6.text-left.right-block
+              h2 Обращение
+              p.dear
+                'ЛЮБИМОЕ NESTLE!
+              p.entry
+                'Мы все наслаждаемся батончиками  Nuts, KitKat, ароматом  Nescafe, а наши дети вкусным Nesquik. Мы любим Вашу продукцию и ценим то, как Вы заботитесь о своих потребителях, улучшая качество и ассортимент. А еще мы любим нашу страну. Мы хотим видеть ее сильной и процветающей. Nestle, давайте вместе развивать Украину! Мы выбрали продукцию, которая производится &laquo;Nestle Россия&raquo;, но может производиться на существующих фабриках  Nestle в  Украине. Мы просим  Вас перенести производство этой продукции в Украину!
+          .row
+            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+              .meter-holder
+                meter value="80" max="100"
+                .pull-left
+                  '0
+                .pull-right
+                  '100.000
+              #counter
+                .col-xs-2#left-block
+                  '&nbsp;
+                .col-xs-4#fisrt-three-digits
+                  '000
+                .col-xs-4#second-three-digits
+                  '000
+                .col-xs-2#right-block                  
+                  '&nbsp;
+              
+              
+          .page-scroll
+            a.btn.btn-white href="#petition" 
+              'Підпишись | Подпишись
+      .row
+        .col-xs-12
+          .pull-left.social
+            = link_to 'http://www.facebook.com/sharer.php?u=http://своє.укр&t=Я підписав петицію', :target=>"_blank" do
+              = image_tag 'icons/icon-circle-fb.png'
+            = link_to 'https://twitter.com/share?url=http://своє.укр&text=Я підписав петицію за перенесення виробництва Nestle до України', :target => '_blank' do
+              = image_tag 'icons/icon-circle-tw.png'
+            = link_to "http://vkontakte.ru/share.php?image=#{asset_url('share-img.png')}&url=http://своє.укр", :target => '_blank' do
+              = image_tag 'icons/icon-circle-vk.png'
+    .arrow-inverted
+      '&nbsp;

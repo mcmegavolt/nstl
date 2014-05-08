@@ -1,0 +1,38 @@
+section#petition.text-center data-stellar-background-ratio="0.5"
+  .arrow
+    '&nbsp;
+  .petition-body
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-4
+          .rounded-title
+            'Підписка | Подписка
+          = form_for :petition, url: petitions_url, remote: true, html: { role: 'form' } do |f|
+            .row
+              .col-xs-6
+                label.sr-only for="first-name" Name
+                = f.text_field :first_name,  :class => 'form-control', :placeholder => 'Ім\'я | Имя', :required => ""
+              .col-xs-6
+                label.sr-only for="last-name" Last
+                = f.text_field :last_name,  :class => 'form-control', :placeholder => 'Прізвище | Отчество', :required => ""
+            .row
+              .col-xs-12
+                label.sr-only for="email" Email
+                = f.text_field :email,  :class => 'form-control', :placeholder => 'Email'
+            .row
+              .col-xs-12      
+                button.btn.btn-white type="submit"
+                  'Відправити | Отправить
+      .row.text-block
+        .col-xs-6.text-right.left-block
+          p
+            'Якщо ви знайшли товар, якого немає в опублікованих товарів компанії Nestle - надсилайте нам. Ми обов'язково опублікуємо!
+        .col-xs-6.text-left.right-block
+          p
+            'Если Вы нашли товар, которого нет в опубликованных товарах компании Nestle - присылайте нам. Мы обязательно опубликуем.
+      / .row.text-center
+      /   .col-lg-12
+      /       a href="#" data-target="#myModal" data-toggle="modal" style="color:#fff;"
+      /         i.fa.fa-play-circle-o
+  .arrow-inverted
+    '&nbsp;
