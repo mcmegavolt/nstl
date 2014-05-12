@@ -5,11 +5,6 @@ section.intro data-stellar-background-ratio="0.5"
         .col-xs-12.top-menu
           ul
             li.page-scroll
-              a href="#donate"
-                'допомога проекту
-                br
-                'помощь проекту
-            li.page-scroll
               a href="#contacts"
                 = image_tag 'icons/icon-envelope.png'
                 br
@@ -54,10 +49,10 @@ section.intro data-stellar-background-ratio="0.5"
               
               
           .page-scroll
-            a.btn.btn-white href="#petition" 
+            a#signup.btn.btn-white href="#petition" 
               'Підпишись | Подпишись
       .row
-        .col-xs-12
+        .col-xs-6
           .pull-left.social
             = link_to 'http://www.facebook.com/sharer.php?u=http://xn--b1ayh2f.xn--j1amh/&t=Я підписав петицію', :target=>"_blank" do
               = image_tag 'icons/icon-circle-fb.png'
@@ -65,5 +60,14 @@ section.intro data-stellar-background-ratio="0.5"
               = image_tag 'icons/icon-circle-tw.png'
             = link_to "http://vkontakte.ru/share.php?image=#{asset_url('share-img.png')}&url=http://xn--b1ayh2f.xn--j1amh/", :target => '_blank' do
               = image_tag 'icons/icon-circle-vk.png'
+        .col-xs-6
+          .pull-right
+            .page-scroll
+              a#donate href="#donate-section"
+                = image_tag 'icons/uah.png'
+                br
+                'допомога проекту
+                br
+                'помощь проекту
     .arrow-inverted
       '&nbsp;

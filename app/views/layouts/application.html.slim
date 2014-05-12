@@ -36,6 +36,6 @@ html itemscope="" itemtype="http://schema.org/Other"
     /     js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&appId=1468136146749027&version=v2.0";
     /     fjs.parentNode.insertBefore(js, fjs);
     /   }(document, 'script', 'facebook-jssdk'));
-    / - if Rails.env.development?
-    /   = render 'shared/responsive_helper'
+    - if Rails.env.development?
+      = render 'shared/responsive_helper'
     = yield

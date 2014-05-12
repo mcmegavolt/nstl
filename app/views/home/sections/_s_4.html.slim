@@ -1,4 +1,4 @@
-section#contacts.text-center
+section#contacts.hide-on-donate.show-on-back.text-center
   .petition-body
     .container
       .row
@@ -13,7 +13,7 @@ section#contacts.text-center
                 'Ми просто згуртована команда молодих та ініціативних людей, що мають свою громадянську позицію та турбуються про майбутнє нашої Країни.
                 br
                 'Так, ми робимо дизайни та програмуємо сайти за гроші, але тільки не тоді, коли це стосується нашого спільного майбутнього!
-            .col-xs-6.text-left.right-block.black-line
+            .col-xs-6.text-left.right-block.silver-line
               p.rus
                 'Мы не коммерческий фонд!
                 br
@@ -30,9 +30,9 @@ section#contacts.text-center
             br
             'Спасибо!
         .col-xs-6.text-left.contact-icons
-          = link_to '#' do
+          = link_to 'http://evestudio.com.ua/', :target => '_blank' do
             = image_tag 'icons/icon-info.png'
-          = link_to 'mailto:office@evestudio.com.ua' do
+          = link_to 'mailto:office@evestudio.com.ua', :target => '_blank' do
             = image_tag 'icons/icon-email.png'
           = link_to 'https://www.facebook.com/Eve.ua', :target => '_blank' do
             = image_tag 'icons/icon-facebook.png'

@@ -125,8 +125,6 @@ $(document).ready(function(){
         }
     });
 
-
-
 });
 
 function reload_counter(count) {
@@ -201,22 +199,82 @@ $(function(){
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($(".navbar").offset().top > 85) {
-        // $(".navbar-fixed-top").addClass("top-nav-collapse");
-        $(".navbar-brand").fadeIn('slow');
+    if ($("#top-nav").offset().top > 85) {
+        if ($('#donate-section').css('display') == 'none') {
+            $("#to-top").fadeIn('slow');
+        }
     } else {
-        // $(".navbar-fixed-top").removeClass("top-nav-collapse");
-        $(".navbar-brand").fadeOut('slow');
+        $("#to-top").fadeOut('slow');
     }
 });
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
+    
     $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+
+        $current = $(this);
+        // If Donation Section is NOT visible
+        if ($('#donate-section').css('display') == 'none') {
+            if ($current[0] == $('a#donate')[0]) {
+                $('.hide-on-donate').fadeOut( "fast", function() {
+                    $('#donate-section').fadeIn("slow", function() {
+                        scroll_page_to($current);
+                    });
+                    $('#to-top').fadeOut("slow");
+                });
+            }
+            scroll_page_to($current);
+
+        }
+        else {
+            if ($current[0] != $('a#donate')[0]) {
+                $('#donate-section').fadeOut( "fast", function() {
+                    $('section.show-on-back').fadeIn("fast", function() {
+                        $('.frame').mightySlider();
+                        scroll_page_to($current);
+                        $('#to-top').fadeIn("slow");
+                    });
+                });
+            }
+            scroll_page_to($current);
+        }
+        event.preventDefault(); 
+
+    });
+
+});
+
+function scroll_page_to(anchor) {
+    $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+    }, 1500, 'easeInOutExpo');
+};
+
+
+$(function() {
+    $('#privat-btn').bind('click', function(event) {
+        if ($('#privat-row').css('display') == 'none') {
+            $('#liqpay-row').fadeOut("fast", function() {
+                $('#privat-row').fadeIn("slow")
+            })
+        }
         event.preventDefault();
+    });
+    $('#liqpay-btn').bind('click', function(event) {
+        if ($('#liqpay-row').css('display') == 'none') {
+            $('#privat-row').fadeOut("fast", function() {
+                $('#liqpay-row').fadeIn("slow")
+            })
+        }
+        event.preventDefault();
+    });
+});
+
+
+$(function() {
+    $('a[href="#"]').bind('click', function(event) {
+        event.preventDefault();
+        return false;
     });
 });
