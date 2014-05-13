@@ -1,8 +1,15 @@
 h2 Дякуємо за підтримку!
-p Ви успішно підписали петицію-звернення до компанії Nestle.
 p
-	b= @petition.first_name
+	'Ви успішно підписали петицію-звернення до компанії Nestle та стали
+	= @petition_count
+	'-м учасником.
 p
-	b= @petition.last_name
+	b Ім'я:
+	'&nbsp;
+	= @petition.first_name
+p
+	b Прізвище:
+	'&nbsp;
+	= @petition.last_name
 hr
 p Цей лист сгенеровано автоматично, не відповідайте на нього.
