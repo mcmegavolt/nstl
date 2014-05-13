@@ -19,24 +19,28 @@
 
 $(document).ready(function(){
 
-    // Hide scroll to top
-    // $(".navbar-brand").hide();
-    
     // Meter Variables
     var count_goal = 30000;
-    // var current = "<%= Petition.count + 14000 %>";
-    var current = "<%= Petition.count %>";
-    var meter_value = (current*100)/count_goal
-    // Meter Animate
-    $({someValue: 0}).animate({someValue: meter_value}, {
-      duration: 2500,
-      easing:'easeInOutExpo', // can be anything
-      step: function() { // called on every step
-        $('meter').attr("value", Math.round(this.someValue));
-      }
+    // var current = "<%= Petition.count %>";
+    jQuery.ajax({
+        type: "GET",
+        dataType: "text",
+        url: "/petitions",
+        success: function(data){
+            var current = parseInt(data, 10)
+            var meter_value = (current*100)/count_goal
+            // Meter Animate
+            $({someValue: 0}).animate({someValue: meter_value}, {
+              duration: 2500,
+              easing:'easeInOutExpo',
+              step: function() { 
+                $('meter').attr("value", Math.round(this.someValue));
+              }
+            });
+            // Reload big counter
+            reload_counter(current);
+        }
     });
-    // Reload big counter
-    reload_counter(current);
 
     var form = $("form");
 
