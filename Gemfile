@@ -47,8 +47,11 @@ gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
 # gem 'gon'
 gem 'pg'
+gem 'delayed_job_active_record'
 
 gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
+
+gem 'letter_opener', :group => :development
