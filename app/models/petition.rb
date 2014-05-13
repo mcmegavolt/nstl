@@ -6,7 +6,8 @@ class Petition < ActiveRecord::Base
 	validates_uniqueness_of :email
 
 	def notify_user
-		NotificationMailer.delay.signed_up(self)
+		# NotificationMailer.delay.signed_up(self)
+		NotificationMailer.signed_up(self).deliver
 	end
 
 end
