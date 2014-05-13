@@ -20,15 +20,16 @@
 $(document).ready(function(){
 
     // Hide scroll to top
-    $(".navbar-brand").hide();
+    // $(".navbar-brand").hide();
     
     // Meter Variables
-    var count_goal = 100000;
-    var current = "<%= Petition.count + 64000 %>";
+    var count_goal = 30000;
+    // var current = "<%= Petition.count + 14000 %>";
+    var current = "<%= Petition.count %>";
     var meter_value = (current*100)/count_goal
     // Meter Animate
     $({someValue: 0}).animate({someValue: meter_value}, {
-      duration: 3000,
+      duration: 2500,
       easing:'easeInOutExpo', // can be anything
       step: function() { // called on every step
         $('meter').attr("value", Math.round(this.someValue));
@@ -83,7 +84,7 @@ $(document).ready(function(){
                     success: function(data){
                         // Scroll to top
                         $('html, body').stop().animate({
-                            scrollTop: $('section.intro').offset().top
+                            scrollTop: $('section.intro').offset().top + 70
                         }, 1500, 'easeInOutExpo', function() {
                             // Clear the form
                             $('form input').val('');
@@ -106,8 +107,7 @@ $(document).ready(function(){
         autoResize: 1,
         easing: 'easeOutExpo',
         parallaxDimensions: {x:1, y:1, z:1},
-        
-        // Navigation options
+        loop: true,
         navigation: {
             slideSize: '100%',
             keyboardNavBy: 'slides'
@@ -154,23 +154,24 @@ function reload_counter(count) {
     // console.log(secondThreeDigits);
     
     $({someValue: 0}).animate({someValue: firstThreeDigits}, {
-      duration: 3000,
+      duration: 2500,
       easing:'easeInOutExpo',
       step: function() { 
         if (Math.round(this.someValue) < 10) {
-            $('#fisrt-three-digits').html('00' + Math.round(this.someValue));
-        }
-        else if (Math.round(this.someValue) < 100) {
             $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
         }
         else {
             $('#fisrt-three-digits').html(Math.round(this.someValue));   
         }
+        
+        // else if (Math.round(this.someValue) < 100) {
+        //     $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
+        // }
       }
     });
 
     $({someValue: 0}).animate({someValue: secondThreeDigits}, {
-      duration: 3000,
+      duration: 2500,
       easing:'easeInOutExpo',
       step: function() { 
         if (Math.round(this.someValue) < 10) {
@@ -199,7 +200,7 @@ $(function(){
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($("#top-nav").offset().top > 85) {
+    if ($("#top-nav").offset().top > 185) {
         if ($('#donate-section').css('display') == 'none') {
             $("#to-top").fadeIn('slow');
         }
@@ -208,7 +209,6 @@ $(window).scroll(function() {
     }
 });
 
-//jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     
     $('.page-scroll a').bind('click', function(event) {
@@ -218,7 +218,7 @@ $(function() {
         if ($('#donate-section').css('display') == 'none') {
             if ($current[0] == $('a#donate')[0]) {
                 $('.hide-on-donate').fadeOut( "fast", function() {
-                    $('#donate-section').fadeIn("slow", function() {
+                    $('#donate-section').fadeIn("fast", function() {
                         scroll_page_to($current);
                     });
                     $('#to-top').fadeOut("slow");
@@ -248,7 +248,7 @@ $(function() {
 function scroll_page_to(anchor) {
     $('html, body').stop().animate({
         scrollTop: $(anchor.attr('href')).offset().top
-    }, 1500, 'easeInOutExpo');
+    }, 1500, 'easeInOutCubic');
 };
 
 
