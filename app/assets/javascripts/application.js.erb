@@ -98,7 +98,11 @@ $(document).ready(function(){
                             // Clear the form
                             $('form input').val('');
                             // Update counter
-                            reload_counter(parseInt(data, 10));
+                            reload_counter(parseInt(data, 10), 'fade');
+                            // $('#second-three-digits').fadeOut('slow', function() {
+                            //     $(this).html(data).fadeIn('slow');
+
+                            // })
                         });
                     }
                 });
@@ -136,11 +140,10 @@ $(document).ready(function(){
 
 });
 
-function reload_counter(count) {
+function reload_counter(count, effect) {
 
     var firstThreeDigits = 0;
     var secondThreeDigits = 0;
-    // count = 100000;
 
     if (count < 1000) {
         firstThreeDigits = 0;
@@ -159,44 +162,59 @@ function reload_counter(count) {
         secondThreeDigits = count.toString().substring(3,6);
     }
 
-    // console.log(firstThreeDigits);
-    // console.log(secondThreeDigits);
-    
-    $({someValue: 0}).animate({someValue: firstThreeDigits}, {
-      duration: 2500,
-      easing:'easeInOutExpo',
-      step: function() { 
-        if (Math.round(this.someValue) < 10) {
-            $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
-        }
-        else {
-            $('#fisrt-three-digits').html(Math.round(this.someValue));   
-        }
-        
-        // else if (Math.round(this.someValue) < 100) {
-        //     $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
-        // }
-      }
-    });
+    if (effect == 'fade') {
+        $('#fisrt-three-digits, #second-three-digits').fadeOut('slow', function() {
+            // Change first three
+            if (firstThreeDigits < 10) {
+                $('#first-three-digits').html('0' + firstThreeDigits);
+            }
+            else {
+                $('#first-three-digits').html(firstThreeDigits);   
+            }
+            // Change second three
+            if (secondThreeDigits < 10) {
+                $('#second-three-digits').html('00' + secondThreeDigits);
+            }
+            else if (secondThreeDigits < 100) {
+                $('#second-three-digits').html('0' + secondThreeDigits);   
+            }
+            else {
+                $('#second-three-digits').html(secondThreeDigits);   
+            }
+            // Show them
+            $(this).fadeIn('slow')
+        })
+    }
+    else {
+        $({someValue: 0}).animate({someValue: firstThreeDigits}, {
+          duration: 2500,
+          easing:'easeInOutExpo',
+          step: function() { 
+            if (Math.round(this.someValue) < 10) {
+                $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
+            }
+            else {
+                $('#fisrt-three-digits').html(Math.round(this.someValue));   
+            }
+          }
+        });
 
-    $({someValue: 0}).animate({someValue: secondThreeDigits}, {
-      duration: 2500,
-      easing:'easeInOutExpo',
-      step: function() { 
-        if (Math.round(this.someValue) < 10) {
-            $('#second-three-digits').html('00' + Math.round(this.someValue));
-        }
-        else if (Math.round(this.someValue) < 100) {
-            $('#second-three-digits').html('0' + Math.round(this.someValue));
-        }
-        else {
-            $('#second-three-digits').html(Math.round(this.someValue));   
-        }
-      }
-    });
-
-
-
+        $({someValue: 0}).animate({someValue: secondThreeDigits}, {
+          duration: 2500,
+          easing:'easeInOutExpo',
+          step: function() { 
+            if (Math.round(this.someValue) < 10) {
+                $('#second-three-digits').html('00' + Math.round(this.someValue));
+            }
+            else if (Math.round(this.someValue) < 100) {
+                $('#second-three-digits').html('0' + Math.round(this.someValue));
+            }
+            else {
+                $('#second-three-digits').html(Math.round(this.someValue));   
+            }
+          }
+        });
+    }
 };
 
 
