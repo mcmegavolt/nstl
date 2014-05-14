@@ -8,10 +8,11 @@ class PetitionsController < InheritedResources::Base
 
 	def validate
 
-	  if Petition.find_by_email(params[:petition][:email])
+	  if !Petition.find_by_email(params[:petition][:email])
 	    @errors = true
 	  else
-	    @errors = "Email exist, sory..."
+	  	@errors = []
+	  	@errors << "Такий email вже був зареєстрований"
 	  end
 
 		respond_to do |format|
