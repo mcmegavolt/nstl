@@ -46,6 +46,7 @@ $(document).ready(function(){
 
     // Validate form
     form.validate({
+      debug: true,
       rules: {
         "petition[first_name]": {
           required: true,
@@ -55,7 +56,11 @@ $(document).ready(function(){
         },
         "petition[email]": {
           required: true,
-          email: true
+          email: true,
+          remote: {
+            url: '/petitions/validate',
+            type: 'post'
+          }
         }
       },
       messages: {

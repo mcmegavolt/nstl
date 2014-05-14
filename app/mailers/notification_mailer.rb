@@ -1,6 +1,6 @@
 class NotificationMailer < ActionMailer::Base
   
-	default from:  = "\"СВОЄ.УКР\" <office@evestudio.com.ua>"
+	default from:  '\"СВОЄ.УКР\" <office@evestudio.com.ua>'
 
   def signed_up(petition)
     @petition = petition
