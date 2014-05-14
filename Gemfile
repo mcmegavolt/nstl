@@ -46,6 +46,7 @@ gem 'inherited_resources'
 gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
 # gem 'gon'
+
 gem 'pg'
 gem 'delayed_job_active_record'
 
