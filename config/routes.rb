@@ -4,10 +4,11 @@ Rails.application.routes.draw do
     get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
   end
 
+  # match 'petitions/validate', :action => 'validate', :via => [:get], :controller => 'petitions'
   match 'petitions/validate', :action => 'validate', :via => [:post], :controller => 'petitions'
-  match 'petitions/validate', :action => 'validate', :via => [:get], :controller => 'petitions'
 
   resources :petitions
+
 
   root 'home#index'
 
