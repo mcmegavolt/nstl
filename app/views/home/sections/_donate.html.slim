@@ -20,68 +20,79 @@ section#donate-section.text-center
               'Проект «СВОЄ.УКР» - общественная инициатива. Каждый кто беспокоится о будущем нашей страны и желает поддержать команду «СВОЕ.УКР», может помочь финансово. 
             p.rus
               'Вы можете сделать взнос в 5, 20, 100 гривен, или любую другую сумму, для поддержки и развития проекта "СВОЕ.УКР".
-    #donate-options
       .row
-        .col-xs-6.col-md-4.col-md-offset-2.left-block
-          a#privat-btn href="#" 
-            = image_tag 'privat.png', :class => 'img-responsive'
-        .col-xs-6.col-md-4.right-block
-          a#liqpay-btn href="#" 
-            = image_tag 'liqpay.png', :class => 'img-responsive'
-    #donate-inctructions
-      #privat-row
-        .row
-          .col-lg-10.col-lg-offset-1
-            .row.text-block
-              .col-xs-6.text-right.left-block
-                p PRIVATBANK.UA
-                p
-                  'Громадська організація "Громадське телебачення",
-                  br
-                  'ЄДРПОУ 38780085, п/р 26005053139189,
-                  br
-                  'ПАТ КБ "Приватбанк" в м.Києві, МФО 321842,
-                  br
-                  'Призначення платежу: безповоротна фінансова допомога наздійснення статутної діяльності ГО &laquo;Громадське телебачення&raquo;
-              .col-xs-6.text-left.right-block.silver-line
-                p.rus PRIVATBANK.UA
-                p.rus
-                  'Общественная организация "Общественное телевидение",
-                  br
-                  'ЕГРПОУ 38780085, р / с 26005053139189,
-                  br
-                  'ПАО КБ "Приватбанк" в Киеве, МФО 321842,
-                  br
-                  'Назначение платежа: безвозвратная финансовая помощь на осуществление уставной деятельности ОО &laquo;Общественное телевидение&raquo;
-        .row
-          .col-xs-12
-            a#paybtn.btn.btn-orange href="#" 
-              'Продовжити | Продолжить
-      #liqpay-row
-        .row
-          .col-lg-10.col-lg-offset-1
-            .row.text-block
-              .col-xs-6.text-right.left-block
-                p LIQPAY.UA
-                p
-                  'Громадська організація "Громадське телебачення",
-                  br
-                  'ЄДРПОУ 38780085, п/р 26005053139189,
-                  br
-                  'ПАТ КБ "Приватбанк" в м.Києві, МФО 321842,
-                  br
-                  'Призначення платежу: безповоротна фінансова допомога наздійснення статутної діяльності ГО &laquo;Громадське телебачення&raquo;
-              .col-xs-6.text-left.right-block.silver-line
-                p.rus LIQPAY.UA
-                p.rus
-                  'Общественная организация "Общественное телевидение",
-                  br
-                  'ЕГРПОУ 38780085, р / с 26005053139189,
-                  br
-                  'ПАО КБ "Приватбанк" в Киеве, МФО 321842,
-                  br
-                  'Назначение платежа: безвозвратная финансовая помощь на осуществление уставной деятельности ОО &laquo;Общественное телевидение&raquo;
-        .row
-          .col-xs-12
-            a#paybtn.btn.btn-orange href="#" 
-              'Продовжити | Продолжить
+        .col-xs-12
+          / a#paybtn.btn.btn-orange href="https://liqpay.com/?do=clickNbuy&button=i14207277656&description=gogogo" target="_blank"
+          /   'Продовжити | Продолжить
+
+
+          form accept-charset="utf-8" action="https://www.liqpay.com/api/pay" method="POST" 
+            input name="public_key" type="hidden" value="i14207277656"
+            input name="amount" type="hidden" value="100"
+            input name="currency" type="hidden" value="UAH"
+            input name="description" type="hidden" value="Фінансова допомога проекту &quot;СВОЄ.УКР&quot;"
+            input name="type" type="hidden" value="donate"
+            input name="language" type="hidden" value="ru"
+            input name="btn_text" src="//static.liqpay.com/buttons/d7ru.radius.png" type="image"
+
+    / #donate-options
+    /   .row
+    /     .col-xs-6.col-md-4.col-md-offset-2.left-block
+    /       a#privat-btn href="#" 
+    /         = image_tag 'privat.png', :class => 'img-responsive'
+    /     .col-xs-6.col-md-4.right-block
+    /       a#liqpay-btn href="#" 
+    /         = image_tag 'liqpay.png', :class => 'img-responsive'
+    / #donate-inctructions
+    /   #privat-row
+    /     .row
+    /       .col-lg-10.col-lg-offset-1
+    /         .row.text-block
+    /           .col-xs-6.text-right.left-block
+    /             p PRIVATBANK.UA
+    /             p
+    /               'Громадська організація "Громадське телебачення",
+    /               br
+    /               'ЄДРПОУ 38780085, п/р 26005053139189,
+    /               br
+    /               'ПАТ КБ "Приватбанк" в м.Києві, МФО 321842,
+    /               br
+    /               'Призначення платежу: безповоротна фінансова допомога наздійснення статутної діяльності ГО &laquo;Громадське телебачення&raquo;
+    /           .col-xs-6.text-left.right-block.silver-line
+    /             p.rus PRIVATBANK.UA
+    /             p.rus
+    /               'Общественная организация "Общественное телевидение",
+    /               br
+    /               'ЕГРПОУ 38780085, р / с 26005053139189,
+    /               br
+    /               'ПАО КБ "Приватбанк" в Киеве, МФО 321842,
+    /               br
+    /               'Назначение платежа: безвозвратная финансовая помощь на осуществление уставной деятельности ОО &laquo;Общественное телевидение&raquo;
+    /     .row
+    /       .col-xs-12
+    /         a#paybtn.btn.btn-orange href="#" 
+    /           'Продовжити | Продолжить
+    /   #liqpay-row
+    /     .row
+    /       .col-lg-10.col-lg-offset-1
+    /         .row.text-block
+    /           .col-xs-6.text-right.left-block
+    /             p LIQPAY.UA
+    /             p
+    /               'Громадська організація "Громадське телебачення",
+    /               br
+    /               'ЄДРПОУ 38780085, п/р 26005053139189,
+    /               br
+    /               'ПАТ КБ "Приватбанк" в м.Києві, МФО 321842,
+    /               br
+    /               'Призначення платежу: безповоротна фінансова допомога наздійснення статутної діяльності ГО &laquo;Громадське телебачення&raquo;
+    /           .col-xs-6.text-left.right-block.silver-line
+    /             p.rus LIQPAY.UA
+    /             p.rus
+    /               'Общественная организация "Общественное телевидение",
+    /               br
+    /               'ЕГРПОУ 38780085, р / с 26005053139189,
+    /               br
+    /               'ПАО КБ "Приватбанк" в Киеве, МФО 321842,
+    /               br
+    /               'Назначение платежа: безвозвратная финансовая помощь на осуществление уставной деятельности ОО &laquo;Общественное телевидение&raquo;
