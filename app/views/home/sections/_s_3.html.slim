@@ -10,14 +10,14 @@ section#petition.hide-on-donate.show-on-back.text-center data-stellar-background
           = form_for :petition, url: petitions_url, remote: true, html: { role: 'form' } do |f|
             .row
               .col-sm-6
-                label.sr-only for="first-name" Name
+                label.sr-only for="petition_first_name" Name
                 = f.text_field :first_name,  :class => 'form-control', :placeholder => 'Ім\'я | Имя', :required => ""
               .col-sm-6
-                label.sr-only for="last-name" Last
-                = f.text_field :last_name,  :class => 'form-control', :placeholder => 'Прізвище | Отчество', :required => ""
+                label.sr-only for="petition_last_name" Last
+                = f.text_field :last_name,  :class => 'form-control', :placeholder => 'Прізвище | Фамилия', :required => ""
             .row
               .col-xs-12
-                label.sr-only for="email" Email
+                label.sr-only for="petition_email" Email
                 = f.text_field :email,  :class => 'form-control', :placeholder => 'Email'
             .row
               .col-xs-12      

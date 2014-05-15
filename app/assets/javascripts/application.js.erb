@@ -44,9 +44,22 @@ $(document).ready(function(){
 
     var form = $("form");
 
+    // Disable keabord Enter key to submit the form
+    form.keypress(function(e){
+        if ( e.which == 13 ) return false;
+        //or...
+        if ( e.which == 13 ) e.preventDefault();
+    });
+
+
     // Validate form
     form.validate({
-      debug: true,
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass(errorClass).removeClass(validClass);
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).removeClass(errorClass).addClass(validClass);
+        },
       rules: {
         "petition[first_name]": {
           required: true,
@@ -99,10 +112,6 @@ $(document).ready(function(){
                             $('form input').val('');
                             // Update counter
                             reload_counter(parseInt(data, 10), 'fade');
-                            // $('#second-three-digits').fadeOut('slow', function() {
-                            //     $(this).html(data).fadeIn('slow');
-
-                            // })
                         });
                     }
                 });
@@ -142,75 +151,77 @@ $(document).ready(function(){
 
 function reload_counter(count, effect) {
 
-    var firstThreeDigits = 0;
-    var secondThreeDigits = 0;
+    var firstNumbers = 0;
+    var secondNumbers = 0;
+
+    left_section = $("#fisrt-three-digits span");
+    right_section = $("#second-three-digits span");
 
     if (count < 1000) {
-        firstThreeDigits = 0;
-        secondThreeDigits = count;
+        firstNumbers = 0;
+        secondNumbers = count;
     }
     else if (count < 10000 ) {
-        firstThreeDigits = count.toString().substring(0,1);
-        secondThreeDigits = count.toString().substring(1,4);
+        firstNumbers = count.toString().substring(0,1);
+        secondNumbers = count.toString().substring(1,4);
     }
     else if (count < 100000 ) {
-        firstThreeDigits = count.toString().substring(0,2);
-        secondThreeDigits = count.toString().substring(2,5);
+        firstNumbers = count.toString().substring(0,2);
+        secondNumbers = count.toString().substring(2,5);
     }
     else {
-        firstThreeDigits = count.toString().substring(0,3);
-        secondThreeDigits = count.toString().substring(3,6);
+        firstNumbers = count.toString().substring(0,3);
+        secondNumbers = count.toString().substring(3,6);
     }
 
     if (effect == 'fade') {
-        $('#fisrt-three-digits, #second-three-digits').fadeOut('slow', function() {
+        $(right_section, left_section).fadeOut('slow', function(){
+
             // Change first three
-            if (firstThreeDigits < 10) {
-                $('#first-three-digits').html('0' + firstThreeDigits);
+            if (firstNumbers < 10) {
+                $(left_section).html('0' + firstNumbers).fadeIn('slow');
             }
             else {
-                $('#first-three-digits').html(firstThreeDigits);   
+                $(left_section).html(firstNumbers).fadeIn('slow');   
             }
             // Change second three
-            if (secondThreeDigits < 10) {
-                $('#second-three-digits').html('00' + secondThreeDigits);
+            if (secondNumbers < 10) {
+                $(right_section).html('00' + secondNumbers).fadeIn('slow');
             }
-            else if (secondThreeDigits < 100) {
-                $('#second-three-digits').html('0' + secondThreeDigits);   
+            else if (secondNumbers < 100) {
+                $(right_section).html('0' + secondNumbers).fadeIn('slow');   
             }
             else {
-                $('#second-three-digits').html(secondThreeDigits);   
+                $(right_section).html(secondNumbers).fadeIn('slow');   
             }
-            // Show them
-            $(this).fadeIn('slow')
-        })
+        });
     }
     else {
-        $({someValue: 0}).animate({someValue: firstThreeDigits}, {
+        $({someValue: 0}).animate({someValue: firstNumbers}, {
           duration: 2500,
           easing:'easeInOutExpo',
           step: function() { 
             if (Math.round(this.someValue) < 10) {
-                $('#fisrt-three-digits').html('0' + Math.round(this.someValue));
+                $(left_section).html('0' + Math.round(this.someValue));
             }
             else {
-                $('#fisrt-three-digits').html(Math.round(this.someValue));   
+                $(left_section).html(Math.round(this.someValue));   
             }
           }
         });
 
-        $({someValue: 0}).animate({someValue: secondThreeDigits}, {
+        $({someValue: 0}).animate({someValue: secondNumbers}, {
           duration: 2500,
           easing:'easeInOutExpo',
           step: function() { 
             if (Math.round(this.someValue) < 10) {
-                $('#second-three-digits').html('00' + Math.round(this.someValue));
+                $(right_section).html('00' + Math.round(this.someValue));
             }
             else if (Math.round(this.someValue) < 100) {
-                $('#second-three-digits').html('0' + Math.round(this.someValue));
+                $(right_section).html('0' + Math.round(this.someValue));
             }
             else {
-                $('#second-three-digits').html(Math.round(this.someValue));   
+                $(right_section).html(Math.round(this.someValue));   
             }
           }
         });

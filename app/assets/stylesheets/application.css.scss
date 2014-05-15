@@ -562,7 +562,7 @@ form {
     input[type="text"] {
         margin-top: 20px;
         padding: 10px 25px;
-        color: #EF6225;
+        color: #565656;
         background-color: #fff;
         font-size: 14px;
         line-height: 14px;
@@ -573,18 +573,21 @@ form {
         border-radius: 24px;
         -moz-border-radius: 24px;
         &::-webkit-input-placeholder {
-            color: #EF6225;
+            color: #D7D7D7;
         }
         &::-moz-placeholder { 
-            color: #EF6225;
+            color: #D7D7D7;
             opacity: 1;
         }
         &:-moz-placeholder { 
-            color: #EF6225;
+            color: #D7D7D7;
             opacity: 1;
         }
         &::-ms-input-placeholder { 
-            color: #EF6225;
+            color: #D7D7D7;
+        }
+        &.error {
+            color: red;
         }
     }
 
@@ -593,7 +596,14 @@ form {
     }
     label {
         margin-bottom: 0;
-        margin-top: 5px;
+        // margin-top: 5px;
+        &.error {
+            color: #fff;
+            background: #CE1319;
+            padding: 3px 15px 5px;
+            -webkit-border-radius: 0 0 15px 15px;
+            border-radius: 0 0 15px 15px;
+        }
     }
 }
 
