@@ -7,7 +7,7 @@ section#petition.hide-on-donate.show-on-back.text-center data-stellar-background
         .col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2
           .rounded-title
             'Підписка | Подписка
-          = form_for :petition, url: petitions_url, remote: true, html: { role: 'form' } do |f|
+          = form_for :petition, url: petitions_url, remote: true, html: { role: 'form', id: 'petition_form'} do |f|
             .row
               .col-sm-6
                 label.sr-only for="petition_first_name" Name

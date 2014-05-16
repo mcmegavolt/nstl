@@ -1,4 +1,4 @@
-section.intro data-stellar-background-ratio="0.5"
+section#home.intro data-stellar-background-ratio="0.5"
   .intro-body
     .container
       .row
@@ -14,8 +14,9 @@ section.intro data-stellar-background-ratio="0.5"
                 'связь с нами
       .row
         .col-md-10.col-md-offset-1
-          h1.brand-heading
-            = image_tag 'logo.png'
+          h1.brand-heading.page-scroll
+            a href="#home"
+              = image_tag 'logo.png'
           .row
             .col-xs-6.text-right.left-block
               h2 Звернення

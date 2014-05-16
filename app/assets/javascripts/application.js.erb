@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require jquery.easing
@@ -42,31 +30,11 @@ $(document).ready(function(){
         }
     });
 
-    var form = $("form");
-
-    // Disable keabord Enter key to submit the form
-    form.keypress(function(e){
-        if ( e.which == 13 ) return false;
-        //or...
-        if ( e.which == 13 ) e.preventDefault();
-    });
-
+    var form = $("#petition_form");
 
     // Validate form
     form.validate({
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass(errorClass).removeClass(validClass);
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).removeClass(errorClass).addClass(validClass);
-        },
       rules: {
-        "petition[first_name]": {
-          required: true,
-        },
-        "petition[last_name]": {
-          required: true,
-        },
         "petition[email]": {
           required: true,
           email: true,
@@ -74,6 +42,12 @@ $(document).ready(function(){
             url: '/petitions/validate',
             type: 'post'
           }
+        },
+        "petition[first_name]": {
+          required: true
+        },
+        "petition[last_name]": {
+          required: true
         }
       },
       messages: {
@@ -86,6 +60,13 @@ $(document).ready(function(){
       }
     });
 
+    // Disable keabord Enter key to submit the form
+    form.keypress(function(e){
+        if ( e.which == 13 ) return false;
+        //or...
+        if ( e.which == 13 ) e.preventDefault();
+    });
+
     form.submit(function() {  
 
         if ($(this).valid()) {
@@ -93,12 +74,17 @@ $(document).ready(function(){
             var valuesToSubmit = $(this).serialize();
             $.ajax({
                 url: $(this).attr('action'),
+                beforeSend: function() {
+                    $("#loading").fadeIn('fast');
+                },
                 data: valuesToSubmit,
                 type: 'post',
                 dataType: 'text'
             }).success(function(){
                 // If submit success
-                $('#myModal').modal('show')
+                $("#loading").fadeOut('fast', function(){
+                    $('#myModal').modal('show');
+                });
                 $.ajax({
                     type: "GET",
                     dataType: "text",
@@ -110,7 +96,6 @@ $(document).ready(function(){
                         }, 1500, 'easeInOutExpo', function() {
                             // Clear the form
                             $('form input').val('');
-                            // Update counter
                             reload_counter(parseInt(data, 10), 'fade');
                         });
                     }
@@ -121,7 +106,6 @@ $(document).ready(function(){
         }
 
     });
-
 
     $('.frame').mightySlider({
         speed: 500,
@@ -229,11 +213,14 @@ function reload_counter(count, effect) {
 };
 
 
+// Parralax stellar initialize
 $(function(){
-    $.stellar({
-        horizontalScrolling: false,
-        verticalOffset: -40
-    });
+    if (jQuery.browser.mobile == false) {
+        $.stellar({
+            horizontalScrolling: false,
+            verticalOffset: -40
+        });
+    }
 });
 
 //jQuery to collapse the navbar on scroll
@@ -290,24 +277,24 @@ function scroll_page_to(anchor) {
 };
 
 
-$(function() {
-    $('#privat-btn').bind('click', function(event) {
-        if ($('#privat-row').css('display') == 'none') {
-            $('#liqpay-row').fadeOut("fast", function() {
-                $('#privat-row').fadeIn("slow")
-            })
-        }
-        event.preventDefault();
-    });
-    $('#liqpay-btn').bind('click', function(event) {
-        if ($('#liqpay-row').css('display') == 'none') {
-            $('#privat-row').fadeOut("fast", function() {
-                $('#liqpay-row').fadeIn("slow")
-            })
-        }
-        event.preventDefault();
-    });
-});
+// $(function() {
+//     $('#privat-btn').bind('click', function(event) {
+//         if ($('#privat-row').css('display') == 'none') {
+//             $('#liqpay-row').fadeOut("fast", function() {
+//                 $('#privat-row').fadeIn("slow")
+//             })
+//         }
+//         event.preventDefault();
+//     });
+//     $('#liqpay-btn').bind('click', function(event) {
+//         if ($('#liqpay-row').css('display') == 'none') {
+//             $('#privat-row').fadeOut("fast", function() {
+//                 $('#liqpay-row').fadeIn("slow")
+//             })
+//         }
+//         event.preventDefault();
+//     });
+// });
 
 
 $(function() {
