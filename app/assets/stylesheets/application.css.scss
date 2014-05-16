@@ -43,6 +43,9 @@ $screen-lg-min: 1200px;
          font-url('avanti_bold/avanti_bold_3.svg#AvantiBold') format('svg');
 }
 
+
+
+
 $text-black: #3D3B3A;
 $text-silver: #9B9B9B;
 $text-red: #E11E1C;
@@ -51,14 +54,10 @@ $text-red: #E11E1C;
 body {
     width: 100%;
     height: 100%;
-    font-family: 'AvantGardeGothicCBook', sans-serif;
-    // font-family: 'AvantiBold', sans-serif;
+    // font-family: 'AvantGardeGothicCBook', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #000;
     background-color: #fff;
-}
-
-b, strong {
-    // font-family: 'AvantiBold', sans-serif;
 }
 
 html {
@@ -74,7 +73,8 @@ h5,
 h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: 'AvantGardeGothicCBook', sans-serif;
+    // font-family: 'AvantGardeGothicCBook', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -190,7 +190,8 @@ p {
         .modal-body {
             padding: 20px 20px 70px ;
             h3 {
-                font-family: 'AvantGardeGothicCBook', sans-serif;
+                // font-family: 'AvantGardeGothicCBook', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 font-weight: 500 !important;
             }
         }
@@ -346,7 +347,6 @@ a#donate {
     }
     .slide-sub-title {
         text-transform: uppercase;
-        // font-family: 'AvantiBold', sans-serif;
         margin-bottom: 20px;
     }
     .slide-content {
@@ -493,7 +493,8 @@ a#donate {
     position: relative;
     margin: 20px 0 30px 0;
     color: #656263;
-    font-family: 'AvantiBold', sans-serif;
+    // font-family: 'AvantiBold', sans-serif;
+    font-weight: bold;
     font-size: 55px;
     @media(min-width:$screen-sm-min) {
         font-size: 90px;
@@ -649,7 +650,8 @@ form {
 
 .btn {
     text-transform: uppercase;
-    font-family: 'AvantGardeGothicCBook', sans-serif;
+    // font-family: 'AvantGardeGothicCBook', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
