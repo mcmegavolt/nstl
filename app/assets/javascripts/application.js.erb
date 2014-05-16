@@ -61,11 +61,11 @@ $(document).ready(function(){
     });
 
     // Disable keabord Enter key to submit the form
-    form.keypress(function(e){
-        if ( e.which == 13 ) return false;
-        //or...
-        if ( e.which == 13 ) e.preventDefault();
-    });
+    // form.keypress(function(e){
+    //     if ( e.which == 13 ) return false;
+    //     //or...
+    //     if ( e.which == 13 ) e.preventDefault();
+    // });
 
     form.submit(function() {  
 
@@ -115,8 +115,8 @@ $(document).ready(function(){
         parallaxDimensions: {x:1, y:1, z:1},
         loop: true,
         navigation: {
-            slideSize: '100%',
-            keyboardNavBy: 'slides'
+            slideSize: '100%'//,
+            // keyboardNavBy: 'slides'
         },
 
         buttons: {

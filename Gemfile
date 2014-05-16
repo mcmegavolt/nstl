@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
@@ -57,4 +56,6 @@ gem 'capistrano-rvm'
 
 gem 'letter_opener', :group => :development
 
-# gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
+# gem 'meta_search'
