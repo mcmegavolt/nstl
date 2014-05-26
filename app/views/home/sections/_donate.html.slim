@@ -1,4 +1,4 @@
-section#donate-section.text-center
+section#donate-section.text-center style="#{'display: none;' unless request.path == '/donate'}"  
   .container
     .row
       .col-lg-10.col-lg-offset-1
@@ -21,7 +21,7 @@ section#donate-section.text-center
             p.rus
               'Вы можете сделать взнос в 5, 20, 100 гривен, или любую другую сумму, для поддержки и развития проекта "СВОЕ.УКР".
       .row
-        .col-xs-12
+        .col-xs-12 style="margin-bottom:100px;"
           / a#paybtn.btn.btn-orange href="https://liqpay.com/?do=clickNbuy&button=i14207277656&description=gogogo" target="_blank"
           /   'Продовжити | Продолжить
 
@@ -33,7 +33,7 @@ section#donate-section.text-center
             input name="description" type="hidden" value="Фінансова допомога проекту &quot;СВОЄ.УКР&quot;"
             input name="type" type="hidden" value="donate"
             input name="language" type="hidden" value="ru"
-            input name="btn_text" src="//static.liqpay.com/buttons/d7ru.radius.png" type="image"
+            input name="btn_text" src="#{asset_path('dopomoga.png')}" type="image"
 
     / #donate-options
     /   .row

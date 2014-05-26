@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :petitions
 
+  match 'donate', :action => 'index', :controller => 'home', :via => [:post, :get]
+
   root 'home#index'
 
   # Example of regular route:

@@ -53,6 +53,8 @@ section#home.intro data-stellar-background-ratio="0.5"
             a#signup.btn.btn-white href="#petition" 
               'Підпишись | Подпишись
       .row
+        - if request.path == '/donate'
+          a name="show"
         .col-xs-6
           .pull-left.social
             = link_to 'http://www.facebook.com/sharer.php?u=http://xn--b1ayh2f.xn--j1amh/&t=Я підписав петицію', :target=>"_blank" do
