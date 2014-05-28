@@ -103,8 +103,7 @@ p {
   font-size: 20px;
   font-weight: bold;
   a {
-    color: #fff;
-    text-shadow: 1px 1px 2px #696969;
+    color: #3CA037;
   }
 }
 
@@ -170,14 +169,23 @@ p {
 .modal {
     .modal-content {
         border-radius: 55px;
+        @media(max-width:$screen-sm-max) {
+            border-radius: 25px;
+        }
         .modal-header {
             border-bottom: 0px none;
             padding: 25px;
-            height: 100px;  
+            height: 100px; 
+            @media(max-width:$screen-sm-max) {
+                height: 77px; 
+            } 
             button.close {
                 opacity: 1;
                 filter: alpha(opacity=100);
                 font-size: 50px;
+                @media(max-width:$screen-sm-max) {
+                    font-size: 30px;
+                }
                 &:hover {
                     opacity: 0.6;
                     filter: alpha(opacity=60);
@@ -189,10 +197,17 @@ p {
         }
         .modal-body {
             padding: 20px 20px 70px ;
+            @media(max-width:$screen-sm-max) {
+                padding: 20px 20px 50px ;
+            }
             h3 {
                 // font-family: 'AvantGardeGothicCBook', sans-serif;
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 500 !important;
+                @media(max-width:$screen-sm-max) {
+                    font-size: 18px;
+                }
+
             }
         }
     }
@@ -285,7 +300,6 @@ p {
     }
 }
 
-
 a#donate {
     color: #fff;
     text-align: center;
@@ -325,8 +339,12 @@ a#donate {
 }
 
 .btn-orange {
+    font-weight: bold !important;
     color: #fff;
-    background-color: #EF6225;
+    border: 2px solid #ffffff !important;
+    background-color: #e11e1c;
+    -webkit-box-shadow: 0 0 5px 0 rgba(255,255,255,.3);
+    box-shadow: 0 0 5px 0 rgba(255,255,255,.3);
 }
 
 .contact-icons a {
@@ -358,6 +376,7 @@ a#donate {
         }
         p:first-child {
             margin-top: 20px;
+            margin-bottom: 25px;
         }
         img {
             &.product {
@@ -732,9 +751,14 @@ body {
     top: 50%;
     z-index: 100;
     width: 600px;
-    margin-top: -200px;
     height: 366px;
+    margin-top: -200px;
     margin-left: -300px;
+    @media(max-width:$screen-sm-max) {
+        width: 400px;
+        height: 332px;
+        margin-left: -208px;
+    }
 }
 
 #helper {

@@ -163,7 +163,7 @@ function reload_counter(count, effect) {
 
             // Change first three
             if (firstNumbers < 10) {
-                $(left_section).html('0' + firstNumbers).fadeIn('slow');
+                $(left_section).html('00' + firstNumbers).fadeIn('slow');
             }
             else {
                 $(left_section).html(firstNumbers).fadeIn('slow');   
@@ -186,10 +186,10 @@ function reload_counter(count, effect) {
           easing:'easeInOutExpo',
           step: function() { 
             if (Math.round(this.someValue) < 10) {
-                $(left_section).html('0' + Math.round(this.someValue));
+                $(left_section).html('00' + Math.round(this.someValue));
             }
             else {
-                $(left_section).html(Math.round(this.someValue));   
+                $(left_section).html('0' + Math.round(this.someValue));   
             }
           }
         });
@@ -225,7 +225,7 @@ $(function(){
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($("#top-nav").offset().top > 185) {
+    if ($("#top-nav").offset().top > 800) {
         if ($('#donate-section').css('display') == 'none') {
             $("#to-top").fadeIn('slow');
         }
