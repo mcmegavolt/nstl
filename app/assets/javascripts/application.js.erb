@@ -75,6 +75,13 @@ $(document).ready(function(){
                 // If submit success
                 $("#loading").fadeOut('fast', function(){
                     $('#myModal').modal('show');
+                    $('#modal-fb-share-btn').click(function(e){
+                        e.preventDefault();
+                        FB.ui({
+                          method: 'share',
+                          href: 'http://xn--b1ayh2f.xn--j1amh/'
+                        }, function(response){});
+                    });
                 });
                 $.ajax({
                     type: "GET",

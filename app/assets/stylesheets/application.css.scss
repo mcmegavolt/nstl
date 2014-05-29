@@ -196,7 +196,7 @@ p {
             }
         }
         .modal-body {
-            padding: 20px 20px 70px ;
+            padding: 20px 20px 50px ;
             @media(max-width:$screen-sm-max) {
                 padding: 20px 20px 50px ;
             }
@@ -208,6 +208,12 @@ p {
                     font-size: 18px;
                 }
 
+            }
+            .share {
+                margin-top: 25px;
+                a:link {
+                    margin-left: 8px;
+                }
             }
         }
     }
@@ -233,16 +239,6 @@ p {
     background-size: cover;
     -o-background-size: cover;
 
-    .social {
-        margin-top: 45px;
-        margin-bottom: 25px;
-        @media(min-width:$screen-sm-min) {
-            margin-bottom: 50px;
-        }
-        a:link {
-            margin-left: 8px;
-        }
-    }
     .help {
         margin-top: 25px;
         margin-bottom: 25px;
@@ -276,6 +272,16 @@ p {
         }
         @media(min-width:$screen-md-min) {
             font-size: 55px;
+        }
+    }
+    .social {
+        margin-top: 45px;
+        margin-bottom: 50px;
+        @media(min-width:$screen-sm-min) {
+            margin-bottom: 45px;
+        }
+        a:link {
+           margin-left: 8px;
         }
     }
 }

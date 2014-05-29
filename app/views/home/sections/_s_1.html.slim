@@ -58,12 +58,7 @@ section#home.intro data-stellar-background-ratio="0.5"
           a name="show"
         .col-xs-6
           .pull-left.social
-            = link_to '#', id: 'fb-share-btn' do
-              = image_tag 'icons/icon-circle-fb.png'
-            = link_to 'https://twitter.com/share?url=http://xn--b1ayh2f.xn--j1amh/&text=Я підписав звернення до компанії Nestle про перенесення виробництва до України', :target => '_blank' do
-              = image_tag 'icons/icon-circle-tw.png'
-            = link_to "http://vkontakte.ru/share.php?url=http://xn--b1ayh2f.xn--j1amh/", :target => '_blank' do
-              = image_tag 'icons/icon-circle-vk.png'
+            = render 'home/sections/share'
         .col-xs-6
           .pull-right.help
             .page-scroll
