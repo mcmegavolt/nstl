@@ -466,37 +466,37 @@ a#donate {
 }
 
 
-.meter-holder {
+// .meter-holder {
     
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 0;
-    margin-top: 20px;
+//     display: inline-block;
+//     width: 100%;
+//     margin-bottom: 0;
+//     margin-top: 20px;
     
-    meter {
-      width: 100%;
-      height: 12px;
-      // border: 0px none;
-      // border-radius: 5px;
-    }
+//     meter {
+//       width: 100%;
+//       height: 12px;
+//       // border: 0px none;
+//       // border-radius: 5px;
+//     }
 
-    meter::-webkit-meter-bar {
-      border-radius: 6px;
-      background: #FFF;
-    }
-    meter::-webkit-meter-optimum-value {
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-      background: linear-gradient(to bottom, #E2B71B, #E2B71B);
-    }
-    meter::-webkit-meter-suboptimum-value {
-        background: linear-gradient(to bottom, #fbb450, #f89406);
-    }
-    meter::-webkit-meter-even-less-good-value {
-        background: linear-gradient(to bottom, #ee5f5b, #bd362f);
-    }
+//     meter::-webkit-meter-bar {
+//       border-radius: 6px;
+//       background: #FFF;
+//     }
+//     meter::-webkit-meter-optimum-value {
+//       border-top-left-radius: 6px;
+//       border-bottom-left-radius: 6px;
+//       background: linear-gradient(to bottom, #E2B71B, #E2B71B);
+//     }
+//     meter::-webkit-meter-suboptimum-value {
+//         background: linear-gradient(to bottom, #fbb450, #f89406);
+//     }
+//     meter::-webkit-meter-even-less-good-value {
+//         background: linear-gradient(to bottom, #ee5f5b, #bd362f);
+//     }
     
-}
+// }
 
 
 #counter {
@@ -817,4 +817,23 @@ body {
     -webkit-overflow-scrolling: touch;
     outline: 0;
     background:rgba(50,50,50,0.7);
+}
+
+.progress {
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    .bar {
+        -webkit-transition: width 5s ease-in-out;
+        -moz-transition: width 5s ease-in-out;
+        -ms-transition: width 5s ease-in-out;
+        -o-transition: width 5s ease-in-out;
+        transition: width 5s ease-in-out;
+    }
+}
+
+
+.progress-bar-custom {
+    background: #FFED10;
 }

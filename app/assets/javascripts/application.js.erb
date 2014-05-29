@@ -16,15 +16,6 @@ $(document).ready(function(){
         url: "/petitions",
         success: function(data){
             var current = parseInt(data, 10)
-            var meter_value = (current*100)/count_goal
-            // Meter Animate
-            $({someValue: 0}).animate({someValue: meter_value}, {
-              duration: 2500,
-              easing:'easeInOutExpo',
-              step: function() { 
-                $('meter').attr("value", Math.round(this.someValue));
-              }
-            });
             // Reload big counter
             reload_counter(current);
         }
@@ -138,6 +129,13 @@ $(document).ready(function(){
           href: 'http://xn--b1ayh2f.xn--j1amh/'
         }, function(response){});
     });
+
+    $('.progress .progress-bar').progressbar({
+        display_text: 'fill'
+        // use_percentage: false
+    });
+
+    $('input, textarea').placeholder();
 
 });
 
