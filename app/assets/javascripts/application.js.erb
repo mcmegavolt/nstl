@@ -134,7 +134,8 @@ $(document).ready(function(){
     $('#fb-share-btn').click(function(e){
         e.preventDefault();
         FB.ui({
-          method: 'share',
+          method: 'share_open_graph',
+          // method: 'share',
           href: 'http://xn--b1ayh2f.xn--j1amh/',
         }, function(response){});
     });
