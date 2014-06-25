@@ -137,6 +137,11 @@ $(document).ready(function(){
         }, function(response){});
     });
 
+    document.getElementById('vk_share_button').innerHTML = VK.Share.button('http://xn--b1ayh2f.xn--j1amh/', {
+        type: 'custom',
+        text: '<%= image_tag "icons/icon-circle-vk.png" %>'
+    });
+
     $('.progress .progress-bar').progressbar({
         display_text: 'fill'
         // use_percentage: false
@@ -252,6 +257,7 @@ $(function() {
     $('.page-scroll a').bind('click', function(event) {
 
         $current = $(this);
+
         // If Donation Section is NOT visible
         if ($('#donate-section').css('display') == 'none') {
             if ($current[0] == $('a#donate')[0]) {
@@ -262,7 +268,7 @@ $(function() {
                     $('#to-top').fadeOut("slow");
                 });
             }
-            scroll_page_to($current);
+            scroll_page_to($current);          
 
         }
         else {
@@ -286,7 +292,9 @@ $(function() {
 function scroll_page_to(anchor) {
     $('html, body').stop().animate({
         scrollTop: $(anchor.attr('href')).offset().top
-    }, 1500, 'easeInOutCubic');
+    }, 1500, 'easeInOutCubic', function(){
+        if (anchor = $('#signup')) $( "#petition_first_name" ).focus();
+    });
 };
 
 
